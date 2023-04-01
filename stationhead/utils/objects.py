@@ -3,7 +3,8 @@
 class profile:
 	def __init__(self, data: dict):
 		self.json = data
-		self.sid = self.json.get("tipping_salt", None)
+		self.sid = self.json.get("", None)
+		self.tipping_salt = self.json.get("tipping_salt", None)
 		self.id = self.json.get("id", None)
 		self.email = self.json.get("email", None)
 		self.contact_email = self.json.get("contact_email", None)

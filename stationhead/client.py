@@ -20,3 +20,15 @@ class Client:
 		resp = objects.profile(loads(self.req.make_request(method="POST", endpoint="/login", body=data).text))
 		self.req.sid = resp.sid
 		return resp
+
+
+	def register(self, email: str, password: str, nickname: str):
+
+		data = {
+			"email": email,
+			"password": password,
+			"handle": nickname
+		}
+
+		resp = objects.profile(loads(self.req.make_request(method="POST", endpoint="/user", body=data).text))
+		return resp
